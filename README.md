@@ -1,4 +1,4 @@
-# MonkeyMemory
+# Monkey Memory
 Monkey Memory is a HTML/JavaScript memory game inspired by this
 [YouTube Video](https://www.youtube.com/watch?v=OIzijKXUO_0)
   
