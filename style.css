@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.container {
+    width: 320px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 55px);
+    gap: 5px;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.cell {
+    width: 55px;
+    height: 55px;
+    background: #f3f3f3;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cell.correct {
+    background: #4caf50;
+    color: white;
+}
+
+.cell.wrong {
+    background: #e74c3c;
+    color: white;
+}
+
+.controls {
+    margin-bottom: 10px;
+}
+
+input[type="range"] {
+    width: 120px;
+}
+
+input[type="number"] {
+    width: 45px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    background: #006aff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+#message {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
