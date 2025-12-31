@@ -89,7 +89,7 @@ function lose(cell)
     startButton.disabled = false;
     updateBestScore();
     cell.classList.add("wrong");
-    messageElement.textContent = "You loose! score = " + step;
+    messageElement.textContent = "You lose! score = " + step;
     messageElement.className = "error";
 }
 
