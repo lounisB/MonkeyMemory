@@ -38,11 +38,15 @@ function start()
     sequence = positions.sort(() => Math.random() - 0.5).slice(0, 10);
 
     sequence.forEach((pos, i) => {
-        grid.children[pos].textContent = i + 1;
+        const cell = grid.children[pos];
+        cell.textContent = i + 1;
+        cell.classList.add("target");
     });
 
     setTimeout(() => {
-        sequence.forEach(pos => grid.children[pos].textContent = "");
+        sequence.forEach(pos => {
+            grid.children[pos].textContent = "";
+        });
         startEnable = true;
     }, timeRange.value * 1000);
 }
@@ -52,6 +56,8 @@ function onClick(index, cell)
     if (!startEnable)
         return;
 
+    cell.classList.remove("target");
+
     if (index === sequence[step])
     {
         cell.classList.add("correct");
@@ -59,7 +65,6 @@ function onClick(index, cell)
 
         if (step === sequence.length)
             win();
-
     }
     else
         lose(cell);
@@ -89,7 +94,7 @@ function lose(cell)
     startButton.disabled = false;
     updateBestScore();
     cell.classList.add("wrong");
-    messageElement.textContent = "You loose! score = " + step;
+    messageElement.textContent = "You lose! score = " + step;
     messageElement.className = "error";
 }
 
